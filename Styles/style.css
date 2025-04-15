@@ -226,4 +226,28 @@ button {
     color: #999;
     margin: 5px 0;
   }
+
+  /* Icône de favori */
+.bookmark-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+  
+  .bookmark {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .bookmark:hover {
+    color: #469388;
+  }
+  
+  .bookmark.active {
+    color: #469388;
+  }
+  
   
