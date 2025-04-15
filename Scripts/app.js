@@ -182,3 +182,17 @@ Document.addEventListener('DOMContentLoaded', () => {
       bookmarkIcon.title = 'Déjà dans ma liste';
     }
   };
+
+    // Fonction suppression livres
+    window.deleteBook = (id) => {
+        books = books.filter(book => book.id !== id);
+        saveBooks();
+        renderBooks();
+        
+        // Mettre à jour l'icône de bookmark dans les résultats de recherche
+        const bookmarkIcon = document.querySelector(`[onclick="addToMyBooks('${id}')"]`);
+        if (bookmarkIcon) {
+          bookmarkIcon.classList.remove('active');
+          bookmarkIcon.title = 'Ajouter à ma liste';
+        }
+      };
