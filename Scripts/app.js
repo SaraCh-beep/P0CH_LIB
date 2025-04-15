@@ -145,3 +145,11 @@ Document.addEventListener('DOMContentLoaded', () => {
       searchResults.innerHTML = '<p>Une erreur est survenue lors de la recherche</p>';
     }
   });
+
+    // Gérer le buton annuler
+    searchForm.querySelector('.cancel').addEventListener('click', () => {
+        searchForm.classList.remove('active');
+        addBookBtn.style.display = 'block';
+        searchForm.reset();
+        searchResults.innerHTML = '';
+      });
