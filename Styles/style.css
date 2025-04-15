@@ -279,3 +279,42 @@ button {
   .delete-btn:hover {
     background-color: #c54a3c;
   }
+
+  /* Responsive design pour tablettes et mobiles */
+@media (max-width: 768px) {
+    .search-results, .books-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    .book-cover {
+      height: 250px;
+    }
+  
+    header .logo {
+      max-width: 120px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-results, .books-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .book-cover {
+      height: 300px;
+    }
+  
+    header .logo {
+      max-width: 100px;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .books-list, .search-results {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
