@@ -38,3 +38,18 @@ body {
     font-size: 1.5rem;
     margin: 1rem 0;
   }
+
+  /* Ligne de séparation */
+#myBooks hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 1rem 0;
+  }
+  
+  /* En-tête de la page */
+  header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
