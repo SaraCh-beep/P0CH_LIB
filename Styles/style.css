@@ -267,3 +267,15 @@ button {
     flex-direction: column;
     position: relative;
   }
+
+  /* Bouton de suppression */
+.delete-btn {
+    background-color: #DF5A4B;
+    color: white;
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c54a3c;
+  }
