@@ -53,3 +53,17 @@ body {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
+
+  /* Logo dans l’en-tête */
+header .logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Titre dans l’en-tête */
+  header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2em;
+  }
