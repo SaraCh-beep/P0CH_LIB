@@ -174,3 +174,11 @@ Document.addEventListener('DOMContentLoaded', () => {
     books.push(book);
     saveBooks();
     renderBooks();
+
+    // Mettre à jour l'icône de bookmark dans les résultats de recherche
+    const bookmarkIcon = document.querySelector(`[onclick="addToMyBooks('${bookId}')"]`);
+    if (bookmarkIcon) {
+      bookmarkIcon.classList.add('active');
+      bookmarkIcon.title = 'Déjà dans ma liste';
+    }
+  };
