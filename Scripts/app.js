@@ -80,3 +80,68 @@ Document.addEventListener('DOMContentLoaded', () => {
     searchForm.classList.add('active');
     addBookBtn.style.display = 'none';
   });
+
+   // Gérer la soumission du formulaire
+   searchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value.trim();
+    const author = document.getElementById('author').value.trim();
+    
+    // Validation des champs
+    if (!title || !author) {
+      alert('Veuillez remplir à la fois le titre et l\'auteur pour effectuer une recherche.');
+      return;
+    }
+    
+    try {
+      // Construction de la requête
+      const query = `intitle:${encodeURIComponent(title)}+inauthor:${encodeURIComponent(author)}`;
+      
+      const url = `${CONFIG.API_URL}?q=${query}&maxResults=10&printType=books&langRestrict=fr&key=${CONFIG.API_KEY}`;
+      console.log('URL de recherche:', url); // Pour déboguer
+      
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      console.log('Réponse API:', data); // Pour déboguer
+      
+      if (data.error) {
+        searchResults.innerHTML = `<p>Erreur API: ${data.error.message}</p>`;
+        console.error('Erreur API:', data.error);
+        return;
+      }
+      
+      if (data.items && data.items.length > 0) {
+        searchResults.innerHTML = data.items.map(book => {
+          const volumeInfo = book.volumeInfo;
+          const thumbnail = volumeInfo.imageLinks?.thumbnail || 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Salesforce_P1_FR/unavailable.png';
+          const authors = volumeInfo.authors && volumeInfo.authors.length > 0 ? volumeInfo.authors[0] : 'Auteur inconnu';
+          const description = volumeInfo.description ? 
+            volumeInfo.description.substring(0, 200) + (volumeInfo.description.length > 200 ? '...' : '') : 
+            'Aucune description disponible';
+          
+          // Vérifier si le livre est déjà dans la liste
+          const isAlreadyInList = books.some(b => b.id === book.id);
+          const bookmarkClass = isAlreadyInList ? 'bookmark active' : 'bookmark';
+          
+          return `
+            <div class="book-card">
+              <img src="${thumbnail}" alt="${volumeInfo.title}" class="book-cover">
+              <h3 class="book-title">${volumeInfo.title}</h3>
+              <p class="book-author">${authors}</p>
+              <p class="book-description">${description}</p>
+              <p class="book-id">ID: ${book.id}</p>
+              <div class="bookmark-container">
+                <i class="fas fa-bookmark ${bookmarkClass}" onclick="addToMyBooks('${book.id}')" title="${isAlreadyInList ? 'Déjà dans ma liste' : 'Ajouter à ma liste'}"></i>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } else {
+        searchResults.innerHTML = '<p>Aucun résultat trouvé</p>';
+      }
+    } catch (error) {
+      console.error('Erreur lors de la recherche:', error);
+      searchResults.innerHTML = '<p>Une erreur est survenue lors de la recherche</p>';
+    }
+  });
