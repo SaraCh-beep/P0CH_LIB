@@ -13,7 +13,7 @@ Application web de gestion de livres pour "La plume enchantée", développée po
 
 1. Clonez le repository :
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/SaraCh-beep/P0CH_LIB.git
 ```
 
 2. Ouvrez le fichier `index.html` dans votre navigateur web
