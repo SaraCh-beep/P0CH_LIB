@@ -1,94 +1,92 @@
-/* Réinitialisation des marges et paddings par défaut */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
-  /* Style général du corps de la page */
-body {
+  
+  body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
   }
-
-  /* Section principale de la bibliothèque */
-#myBooks {
+  
+  #myBooks {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
   }
-
-  /* Logo de la bibliothèque */
-#myBooks .logo {
+  
+  #myBooks .logo {
     max-width: 150px;
     height: auto;
     margin-bottom: 1rem;
-
-    /* Titre principal */
-#myBooks .title {
+  }
+  
+  #myBooks .title {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
   
-  /* Sous-titres */
   #myBooks .h2 {
     font-size: 1.5rem;
     margin: 1rem 0;
   }
-
-  /* Ligne de séparation */
-#myBooks hr {
+  
+  #myBooks hr {
     border: none;
     border-top: 1px solid #e0e0e0;
     margin: 1rem 0;
   }
   
-  /* En-tête de la page */
+  /* Header styles */
   header {
     background-color: white;
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-
-  /* Logo dans l’en-tête */
-header .logo {
+  
+  header .logo {
     max-width: 150px;
     height: auto;
     margin-bottom: 10px;
   }
   
-  /* Titre dans l’en-tête */
   header h1 {
     margin: 0;
     color: #333;
     font-size: 2em;
   }
-
-  /* Structure des sections principales */
-.search-section,
-.my-books-section {
-  background-color: white;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Titres des sections */
-.section-title {
-  color: #333;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  text-align: center;
-}
-
-/* Style des boutons généraux */
-button {
+  
+  /* Structure de la page */
+  .search-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .my-books-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  /* Styles des boutons */
+  button {
     cursor: pointer;
     padding: 10px 15px;
     border: none;
@@ -97,7 +95,6 @@ button {
     transition: background-color 0.3s;
   }
   
-  /* Bouton "Ajouter un livre" */
   .add-book-btn {
     background-color: #469388;
     color: white;
@@ -109,9 +106,9 @@ button {
   .add-book-btn:hover {
     background-color: #3a7a71;
   }
-
-  /* Formulaire de recherche */
-.search-form {
+  
+  /* Styles du formulaire de recherche */
+  .search-form {
     display: none;
     margin-bottom: 20px;
   }
@@ -120,7 +117,6 @@ button {
     display: block;
   }
   
-  /* Groupe de champs dans le formulaire */
   .form-group {
     margin-bottom: 15px;
   }
@@ -139,13 +135,11 @@ button {
     font-size: 16px;
   }
   
-  /* Groupe de boutons */
-.button-group {
+  .button-group {
     display: flex;
     gap: 10px;
   }
   
-  /* Bouton de recherche */
   .search {
     background-color: #469388;
     color: white;
@@ -155,7 +149,6 @@ button {
     background-color: #3a7a71;
   }
   
-  /* Bouton d'annulation */
   .cancel {
     background-color: #DF5A4B;
     color: white;
@@ -164,16 +157,15 @@ button {
   .cancel:hover {
     background-color: #c54a3c;
   }
-
-  /* Résultats de recherche */
-.search-results {
+  
+  /* Styles des résultats de recherche */
+  .search-results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
   }
-
-  /* Carte d’un livre */
-.book-card {
+  
+  .book-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -183,13 +175,12 @@ button {
     position: relative;
     transition: transform 0.3s;
   }
-
+  
   .book-card:hover {
     transform: translateY(-5px);
   }
-
-  /*  Image de couverture du livre */
-.book-cover {
+  
+  .book-cover {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -197,21 +188,18 @@ button {
     margin-bottom: 10px;
   }
   
-  /* Titre du livre */
   .book-title {
     font-size: 18px;
     margin: 10px 0 5px;
     font-weight: bold;
   }
   
-  /*  Auteur */
   .book-author {
     font-size: 14px;
     color: #666;
     margin: 5px 0;
   }
   
-  /* Description */
   .book-description {
     font-size: 14px;
     color: #555;
@@ -220,15 +208,14 @@ button {
     flex-grow: 1;
   }
   
-  /* ID du livre */
   .book-id {
     font-size: 12px;
     color: #999;
     margin: 5px 0;
   }
-
-  /* Icône de favori */
-.bookmark-container {
+  
+  /* Styles pour l'icône de bookmark */
+  .bookmark-container {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -250,15 +237,14 @@ button {
     color: #469388;
   }
   
-  /* Liste des livres ajoutés */
-.books-list {
+  /* Styles de la liste de livres */
+  .books-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
   }
-
-  /* Carte d’un livre dans la liste perso */
-.my-book-card {
+  
+  .my-book-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -267,9 +253,8 @@ button {
     flex-direction: column;
     position: relative;
   }
-
-  /* Bouton de suppression */
-.delete-btn {
+  
+  .delete-btn {
     background-color: #DF5A4B;
     color: white;
     margin-top: 10px;
@@ -279,17 +264,17 @@ button {
   .delete-btn:hover {
     background-color: #c54a3c;
   }
-
-  /* Responsive design pour tablettes et mobiles */
-@media (max-width: 768px) {
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
     .search-results, .books-list {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
-  
+    
     .book-cover {
       height: 250px;
     }
-  
+    
     header .logo {
       max-width: 120px;
     }
@@ -299,15 +284,15 @@ button {
     .search-results, .books-list {
       grid-template-columns: 1fr;
     }
-  
+    
     .book-cover {
       height: 300px;
     }
-  
+    
     header .logo {
       max-width: 100px;
     }
-  
+    
     .button-group {
       flex-direction: column;
     }
@@ -317,4 +302,4 @@ button {
     .books-list, .search-results {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
+  } 
