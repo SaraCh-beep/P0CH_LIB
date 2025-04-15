@@ -1,6 +1,15 @@
-/* 🔧 Réinitialisation des marges et paddings par défaut */
+/* Réinitialisation des marges et paddings par défaut */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  /* Style général du corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
   }
