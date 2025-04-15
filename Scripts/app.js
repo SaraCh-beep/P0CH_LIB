@@ -153,3 +153,24 @@ Document.addEventListener('DOMContentLoaded', () => {
         searchForm.reset();
         searchResults.innerHTML = '';
       });
+
+  // Ajout du livre à la liste
+  window.addToMyBooks = (bookId) => {
+    // Vérifier si le livre est déjà dans la liste
+    if (books.some(book => book.id === bookId)) {
+      alert('Ce livre est déjà dans votre liste.');
+      return;
+    }
+    
+    const bookCard = document.querySelector(`[onclick="addToMyBooks('${bookId}')"]`).closest('.book-card');
+    const book = {
+      id: bookId,
+      title: bookCard.querySelector('.book-title').textContent,
+      author: bookCard.querySelector('.book-author').textContent,
+      cover: bookCard.querySelector('.book-cover').src,
+      description: bookCard.querySelector('.book-description').textContent
+    };
+    
+    books.push(book);
+    saveBooks();
+    renderBooks();
