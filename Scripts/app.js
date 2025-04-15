@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Configuration de l'API
     const CONFIG = {
-      API_KEY: 'AIzaSyCxT3W7AlUuARzmCls-o7QYRFibraseKDE',
+      API_KEY: ------
       API_URL: 'https://www.googleapis.com/books/v1/volumes'
     };
     
