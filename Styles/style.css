@@ -139,3 +139,29 @@ button {
     font-size: 16px;
   }
   
+  /* Groupe de boutons */
+.button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Bouton de recherche */
+  .search {
+    background-color: #469388;
+    color: white;
+  }
+  
+  .search:hover {
+    background-color: #3a7a71;
+  }
+  
+  /* Bouton d'annulation */
+  .cancel {
+    background-color: #DF5A4B;
+    color: white;
+  }
+  
+  .cancel:hover {
+    background-color: #c54a3c;
+  }
+  
