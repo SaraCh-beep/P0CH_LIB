@@ -26,3 +26,15 @@ body {
     max-width: 150px;
     height: auto;
     margin-bottom: 1rem;
+
+    /* Titre principal */
+#myBooks .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Sous-titres */
+  #myBooks .h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
