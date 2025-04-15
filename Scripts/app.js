@@ -53,3 +53,30 @@ Document.addEventListener('DOMContentLoaded', () => {
 
    // Inserer le formulaire
   searchSection.appendChild(searchForm);
+
+  // Créer un conteneur pour les resultats de recherche
+  const searchResults = document.createElement('div');
+  searchResults.className = 'search-results';
+  searchSection.appendChild(searchResults);
+
+  // Créer un conteneur pour la poch'liste
+  const myBooksSection = document.createElement('div');
+  myBooksSection.className = 'my-books-section';
+  content.appendChild(myBooksSection);
+
+  // Ajouter un titre pour la poch'liste
+  const myBooksTitle = document.createElement('h2');
+  myBooksTitle.textContent = 'Ma poch\'liste';
+  myBooksTitle.className = 'section-title';
+  myBooksSection.appendChild(myBooksTitle);
+
+  // Créer un conteneur pour la liste des livres
+  const booksList = document.createElement('div');
+  booksList.className = 'books-list';
+  myBooksSection.appendChild(booksList);
+
+  // Gérer le clic sur le bouton Ajouter un livre
+  addBookBtn.addEventListener('click', () => {
+    searchForm.classList.add('active');
+    addBookBtn.style.display = 'none';
+  });
