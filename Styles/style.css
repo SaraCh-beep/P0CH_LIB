@@ -109,3 +109,33 @@ button {
   .add-book-btn:hover {
     background-color: #3a7a71;
   }
+
+  /* Formulaire de recherche */
+.search-form {
+    display: none;
+    margin-bottom: 20px;
+  }
+  
+  .search-form.active {
+    display: block;
+  }
+  
+  /* Groupe de champs dans le formulaire */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
