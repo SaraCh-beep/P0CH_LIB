@@ -196,3 +196,8 @@ Document.addEventListener('DOMContentLoaded', () => {
           bookmarkIcon.title = 'Ajouter à ma liste';
         }
       };
+
+        // Enregistrement des livres au localStorage
+  function saveBooks() {
+    localStorage.setItem('books', JSON.stringify(books));
+  }
