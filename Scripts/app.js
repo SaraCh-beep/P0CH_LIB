@@ -201,3 +201,23 @@ Document.addEventListener('DOMContentLoaded', () => {
   function saveBooks() {
     localStorage.setItem('books', JSON.stringify(books));
   }
+
+    // Liste des livres de rendu
+    function renderBooks() {
+        booksList.innerHTML = books.map(book => `
+          <div class="my-book-card">
+            <img src="${book.cover}" alt="${book.title}" class="book-cover">
+            <h3 class="book-title">${book.title}</h3>
+            <p class="book-author">${book.author}</p>
+            <p class="book-description">${book.description}</p>
+            <p class="book-id">ID: ${book.id}</p>
+            <button class="delete-btn" onclick="deleteBook('${book.id}')">
+              <i class="fas fa-trash"></i> Supprimer
+            </button>
+          </div>
+        `).join('');
+      }
+    
+      // Rendu initialr
+      renderBooks();
+    });
