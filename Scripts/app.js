@@ -32,3 +32,21 @@ Document.addEventListener('DOMContentLoaded', () => {
   addBookBtn.className = 'add-book-btn';
   addBookBtn.textContent = 'Ajouter un livre';
   searchSection.appendChild(addBookBtn);
+
+   // Créer un formulaire de recherche
+   const searchForm = document.createElement('form');
+   searchForm.className = 'search-form';
+   searchForm.innerHTML = `
+     <div class="form-group">
+       <label for="title">Titre du livre</label>
+       <input type="text" id="title" name="title" placeholder="Entrez le titre du livre" required>
+     </div>
+     <div class="form-group">
+       <label for="author">Auteur</label>
+       <input type="text" id="author" name="author" placeholder="Entrez le nom de l'auteur" required>
+     </div>
+     <div class="button-group">
+       <button type="submit" class="search">Rechercher</button>
+       <button type="button" class="cancel">Annuler</button>
+     </div>
+   `;
