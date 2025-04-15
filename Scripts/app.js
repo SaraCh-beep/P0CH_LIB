@@ -50,3 +50,6 @@ Document.addEventListener('DOMContentLoaded', () => {
        <button type="button" class="cancel">Annuler</button>
      </div>
    `;
+
+   // Inserer le formulaire
+  searchSection.appendChild(searchForm);
