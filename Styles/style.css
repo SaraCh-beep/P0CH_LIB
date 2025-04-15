@@ -20,3 +20,9 @@ body {
     margin: 0 auto;
     padding: 1rem;
   }
+
+  /* Logo de la bibliothèque */
+#myBooks .logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
