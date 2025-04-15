@@ -86,3 +86,26 @@ header .logo {
   font-size: 1.5em;
   text-align: center;
 }
+
+/* Style des boutons généraux */
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  /* Bouton "Ajouter un livre" */
+  .add-book-btn {
+    background-color: #469388;
+    color: white;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  .add-book-btn:hover {
+    background-color: #3a7a71;
+  }
